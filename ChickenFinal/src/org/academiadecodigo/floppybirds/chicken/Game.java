@@ -22,8 +22,7 @@ public class Game {
     Sound traffic;
     Sound deadChicken;
 
-    public void init(){
-
+    public void init() {
 
         Field field = new Field();
         chicken = new Chicken();
@@ -94,20 +93,18 @@ public class Game {
 
     }
 
-
-
-    public void showInstructions(){
+    public void showInstructions() {
         mainScreen.delete();
     }
 
-    public void hideScreens(){
+    public void hideScreens() {
         instructionsScreen.delete();
         mainScreen.delete();
         chicken.setCanMove(true);
         traffic.setLoop(1000);
     }
 
-    public void start() throws InterruptedException{
+    public void start() throws InterruptedException {
         carsMathRandomValue = 400;
         carsThreadSleepValue = 50;
         while (!chicken.getIsDead()) {
@@ -133,71 +130,72 @@ public class Game {
         }
     }
 
-    public int choseCarToMove(){
+    public int choseCarToMove() {
         return (int) Math.floor(Math.random() * carsMathRandomValue);
     }
 
-    public void checkIfLeftSoon(int num){
+    public void checkIfLeftSoon(int num) {
 
-        if (num >= 0 && num <= 4){
+        if (num >= 0 && num <= 4) {
 
-            if ((cars[0].leftSoon) || (cars[1].leftSoon) || (cars[2].leftSoon) || (cars[3].leftSoon) || (cars[4].leftSoon)){
+            if ((cars[0].leftSoon) || (cars[1].leftSoon) || (cars[2].leftSoon) || (cars[3].leftSoon)
+                    || (cars[4].leftSoon)) {
                 cars[num].isParked = true;
             } else {
                 cars[num].isParked = false;
             }
         }
 
-        if (num >= 5 && num <= 9){
-            if (cars[5].leftSoon || cars[6].leftSoon || cars[7].leftSoon || cars[8].leftSoon || cars[9].leftSoon){
+        if (num >= 5 && num <= 9) {
+            if (cars[5].leftSoon || cars[6].leftSoon || cars[7].leftSoon || cars[8].leftSoon || cars[9].leftSoon) {
                 cars[num].isParked = true;
             } else {
                 cars[num].isParked = false;
             }
         }
 
-        if (num >= 10 && num <= 14){
-            if (cars[10].leftSoon || cars[11].leftSoon || cars[12].leftSoon || cars[13].leftSoon || cars[14].leftSoon){
+        if (num >= 10 && num <= 14) {
+            if (cars[10].leftSoon || cars[11].leftSoon || cars[12].leftSoon || cars[13].leftSoon || cars[14].leftSoon) {
                 cars[num].isParked = true;
             } else {
                 cars[num].isParked = false;
             }
         }
 
-        if (num >= 15 && num <= 19){
-            if (cars[15].leftSoon || cars[16].leftSoon || cars[17].leftSoon || cars[18].leftSoon || cars[19].leftSoon){
+        if (num >= 15 && num <= 19) {
+            if (cars[15].leftSoon || cars[16].leftSoon || cars[17].leftSoon || cars[18].leftSoon || cars[19].leftSoon) {
                 cars[num].isParked = true;
             } else {
                 cars[num].isParked = false;
             }
         }
 
-        if (num >= 20 && num <= 24){
-            if (cars[20].leftSoon || cars[21].leftSoon || cars[22].leftSoon || cars[23].leftSoon || cars[24].leftSoon){
+        if (num >= 20 && num <= 24) {
+            if (cars[20].leftSoon || cars[21].leftSoon || cars[22].leftSoon || cars[23].leftSoon || cars[24].leftSoon) {
                 cars[num].isParked = true;
             } else {
                 cars[num].isParked = false;
             }
         }
 
-        if (num >= 25 && num <= 29){
-            if (cars[25].leftSoon || cars[26].leftSoon || cars[27].leftSoon || cars[28].leftSoon || cars[29].leftSoon){
+        if (num >= 25 && num <= 29) {
+            if (cars[25].leftSoon || cars[26].leftSoon || cars[27].leftSoon || cars[28].leftSoon || cars[29].leftSoon) {
                 cars[num].isParked = true;
             } else {
                 cars[num].isParked = false;
             }
         }
 
-        if (num >= 30 && num <= 34){
-            if (cars[30].leftSoon || cars[31].leftSoon || cars[32].leftSoon || cars[33].leftSoon || cars[34].leftSoon){
+        if (num >= 30 && num <= 34) {
+            if (cars[30].leftSoon || cars[31].leftSoon || cars[32].leftSoon || cars[33].leftSoon || cars[34].leftSoon) {
                 cars[num].isParked = true;
             } else {
                 cars[num].isParked = false;
             }
         }
 
-        if (num >= 35 && num <= 39){
-            if (cars[35].leftSoon || cars[36].leftSoon || cars[37].leftSoon || cars[38].leftSoon || cars[39].leftSoon){
+        if (num >= 35 && num <= 39) {
+            if (cars[35].leftSoon || cars[36].leftSoon || cars[37].leftSoon || cars[38].leftSoon || cars[39].leftSoon) {
                 cars[num].isParked = true;
             } else {
                 cars[num].isParked = false;
@@ -206,10 +204,10 @@ public class Game {
 
     }
 
-
-    public void collisionDetector(Car c){
-        if(chicken.getPosY() == c.posY){
-            if ((chicken.getPosX() >= c.posX && chicken.getPosX() <= c.posX + 60) || (chicken.getPosX() + 30 >= c.posX && chicken.getPosX() + 30 <= c.posX + 60)){
+    public void collisionDetector(Car c) {
+        if (chicken.getPosY() == c.posY) {
+            if ((chicken.getPosX() >= c.posX && chicken.getPosX() <= c.posX + 60)
+                    || (chicken.getPosX() + 30 >= c.posX && chicken.getPosX() + 30 <= c.posX + 60)) {
                 gameOver = true;
                 chicken.setIsDead(true);
                 chicken.setDeadChicken();

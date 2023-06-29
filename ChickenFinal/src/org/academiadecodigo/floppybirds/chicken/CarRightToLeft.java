@@ -4,19 +4,19 @@ public class CarRightToLeft extends Car {
 
     private final int POSINITX = Field.PADDING + Field.WIDTH + Field.BORDER;
 
-    public CarRightToLeft(int posX, int posY, String picture){
+    public CarRightToLeft(int posX, int posY, String picture) {
 
         super(posX, posY, picture);
     }
 
     @Override
-    public void carMove(){
+    public void carMove() {
 
         if (posX > Field.PADDING) {
 
             car.translate(-5, 0);
             posX = posX - 5;
-            if (posX > 880){
+            if (posX > 880) {
                 leftSoon = true;
             } else {
                 leftSoon = false;

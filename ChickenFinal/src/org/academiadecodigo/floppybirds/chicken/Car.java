@@ -12,7 +12,6 @@ public abstract class Car {
     private int width = 60;
     private int height = 30;
 
-
     public Car(int posX, int posY, String picture) {
 
         car = new Picture(posX, posY, picture);
@@ -23,7 +22,4 @@ public abstract class Car {
 
     public abstract void carMove();
 
-
 }
-
-

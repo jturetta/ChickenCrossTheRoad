@@ -10,7 +10,6 @@ public class ControlsMainScreen implements KeyboardHandler {
     private Keyboard keyboard;
     private Game game;
 
-
     public void init() {
 
         keyboard = new Keyboard(this);
@@ -54,6 +53,4 @@ public class ControlsMainScreen implements KeyboardHandler {
         this.game = game;
     }
 
-
 }
-

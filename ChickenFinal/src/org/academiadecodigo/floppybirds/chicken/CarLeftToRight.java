@@ -4,14 +4,13 @@ public class CarLeftToRight extends Car {
 
     private final int POSINITX = Field.PADDING;
 
-    public CarLeftToRight(int posX, int posY, String picture){
+    public CarLeftToRight(int posX, int posY, String picture) {
 
         super(posX, posY, picture);
     }
 
-
     @Override
-    public void carMove(){
+    public void carMove() {
 
         if (posX < Field.PADDING + Field.WIDTH + Field.BORDER) {
 
@@ -26,7 +25,7 @@ public class CarLeftToRight extends Car {
             return;
 
         }
-        car.translate(- Field.WIDTH - Field.BORDER, 0);
+        car.translate(-Field.WIDTH - Field.BORDER, 0);
         posX = POSINITX;
         isParked = true;
     }

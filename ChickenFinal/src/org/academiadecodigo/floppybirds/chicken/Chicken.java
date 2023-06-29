@@ -20,7 +20,6 @@ public class Chicken {
     private Sound chickenSound;
     private Sound ping;
 
-
     public Chicken() {
 
         chicken = new Picture(posX, posY, "resources/fatChicken.png");
@@ -28,12 +27,12 @@ public class Chicken {
         isDead = false;
         canMove = false;
 
-        scoreCounter = new Text(940,313, "" + Game.score);
+        scoreCounter = new Text(940, 313, "" + Game.score);
         scoreCounter.setColor(Color.BLACK);
-        scoreCounter.grow(8,8);
+        scoreCounter.grow(8, 8);
         scoreCounter.draw();
 
-        chickenSound = new Sound ("/resources/chickenSound.wav");
+        chickenSound = new Sound("/resources/chickenSound.wav");
         ping = new Sound("/resources/ping.wav");
     }
 
@@ -55,7 +54,7 @@ public class Chicken {
         }
     }
 
-    public void moveUp(){
+    public void moveUp() {
         if (!isDead && canMove) {
             if (!(posY <= Field.PADDING)) {
                 chicken.translate(0, -chickenSize - Field.LINE_HEIGHT);
@@ -76,7 +75,7 @@ public class Chicken {
         }
     }
 
-    public void resetChickenPos(){
+    public void resetChickenPos() {
         canMove = false;
         ping.play(true);
         if (posX != initX) {
@@ -88,26 +87,23 @@ public class Chicken {
         posY = initY;
     }
 
-
-
     public void finishLineChecker() {
         Game.score++;
 
         scoreCounter.delete();
-        scoreCounter = new Text(940,313, "" + Game.score);
+        scoreCounter = new Text(940, 313, "" + Game.score);
         scoreCounter.setColor(Color.BLACK);
-        scoreCounter.grow(8,8);
+        scoreCounter.grow(8, 8);
         scoreCounter.draw();
         resetChickenPos();
         canMove = true;
-        if(Game.carsMathRandomValue > 40) {
+        if (Game.carsMathRandomValue > 40) {
             Game.carsMathRandomValue -= 20;
         }
-        if(Game.carsThreadSleepValue > 10) {
+        if (Game.carsThreadSleepValue > 10) {
             Game.carsThreadSleepValue -= 2;
         }
     }
-
 
     public int getPosX() {
         return posX;
